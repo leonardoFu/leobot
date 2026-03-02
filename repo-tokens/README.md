@@ -12,7 +12,7 @@ A GitHub Action that calculates the size of your codebase in terms of tokens and
 ## Usage
 
 ```yaml
-- uses: qwibitai/nanoclaw/repo-tokens@v1
+- uses: leonardoFu/leobot/repo-tokens@v1
   with:
     include: 'src/**/*.ts'
     exclude: 'src/**/*.test.ts'
@@ -34,7 +34,7 @@ Repos using repo-tokens:
 
 | Repo | Badge |
 |------|-------|
-| [NanoClaw](https://github.com/qwibitai/NanoClaw) | ![tokens](https://raw.githubusercontent.com/qwibitai/NanoClaw/main/repo-tokens/badge.svg) |
+| [LeoBot](https://github.com/leonardoFu/leobot) | ![tokens](https://raw.githubusercontent.com/leonardoFu/leobot/main/repo-tokens/badge.svg) |
 
 ### Full workflow example
 
@@ -59,7 +59,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - uses: qwibitai/nanoclaw/repo-tokens@v1
+      - uses: leonardoFu/leobot/repo-tokens@v1
         id: tokens
         with:
           include: 'src/**/*.ts'

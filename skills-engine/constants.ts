@@ -1,9 +1,9 @@
-export const NANOCLAW_DIR = '.nanoclaw';
+export const LEOBOT_DIR = '.leobot';
 export const STATE_FILE = 'state.yaml';
-export const BASE_DIR = '.nanoclaw/base';
-export const BACKUP_DIR = '.nanoclaw/backup';
-export const LOCK_FILE = '.nanoclaw/lock';
-export const CUSTOM_DIR = '.nanoclaw/custom';
+export const BASE_DIR = '.leobot/base';
+export const BACKUP_DIR = '.leobot/backup';
+export const LOCK_FILE = '.leobot/lock';
+export const CUSTOM_DIR = '.leobot/custom';
 export const SKILLS_SCHEMA_VERSION = '0.1.0';
 
 // Top-level paths to include in base snapshot and upstream extraction.

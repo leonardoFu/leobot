@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import { createBackup, restoreBackup, clearBackup } from '../backup.js';
-import { createTempDir, setupNanoclawDir, cleanup } from './test-helpers.js';
+import { createTempDir, setupLeobotDir, cleanup } from './test-helpers.js';
 
 describe('backup', () => {
   let tmpDir: string;
@@ -10,7 +10,7 @@ describe('backup', () => {
 
   beforeEach(() => {
     tmpDir = createTempDir();
-    setupNanoclawDir(tmpDir);
+    setupLeobotDir(tmpDir);
     process.chdir(tmpDir);
   });
 
@@ -45,7 +45,7 @@ describe('backup', () => {
     fs.writeFileSync(path.join(tmpDir, 'src', 'app.ts'), 'content');
     createBackup(['src/app.ts']);
 
-    const backupDir = path.join(tmpDir, '.nanoclaw', 'backup');
+    const backupDir = path.join(tmpDir, '.leobot', 'backup');
     expect(fs.existsSync(backupDir)).toBe(true);
 
     clearBackup();
@@ -57,7 +57,7 @@ describe('backup', () => {
 
     const tombstone = path.join(
       tmpDir,
-      '.nanoclaw',
+      '.leobot',
       'backup',
       'src',
       'newfile.ts.tombstone',

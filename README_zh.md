@@ -1,13 +1,13 @@
 <p align="center">
-  <img src="assets/nanoclaw-logo.png" alt="NanoClaw" width="400">
+  <img src="assets/leobot-logo.png" alt="LeoBot" width="400">
 </p>
 
 <p align="center">
-  NanoClaw —— 您的专属 Claude 助手，在容器中安全运行。它轻巧易懂，并能根据您的个人需求灵活定制。
+  LeoBot —— 您的专属 Claude 助手，在容器中安全运行。它轻巧易懂，并能根据您的个人需求灵活定制。
 </p>
 
 <p align="center">
-  <a href="https://nanoclaw.dev">nanoclaw.dev</a>&nbsp; • &nbsp;
+  <a href="https://leobot.dev">leobot.dev</a>&nbsp; • &nbsp;
   <a href="README.md">English</a>&nbsp; • &nbsp;
   <a href="https://discord.gg/VDdww8qS42"><img src="https://img.shields.io/discord/1470188214710046894?label=Discord&logo=discord&v=2" alt="Discord" valign="middle"></a>&nbsp; • &nbsp;
   <a href="repo-tokens"><img src="repo-tokens/badge.svg" alt="34.9k tokens, 17% of context window" valign="middle"></a>
@@ -17,15 +17,15 @@
 
 ## 我为什么创建这个项目
 
-[OpenClaw](https://github.com/openclaw/openclaw) 是一个令人印象深刻的项目，愿景宏大。但我无法安心使用一个我不了解却能访问我个人隐私的软件。OpenClaw 有 52+ 个模块、8 个配置管理文件、45+ 个依赖项，以及为 15 个渠道提供商设计的抽象层。其安全性是应用级别的（通过白名单、配对码实现），而非操作系统级别的隔离。所有东西都在一个共享内存的 Node 进程中运行。
+一个足够小、可以完全理解的个人 AI 助手。一个进程，几个文件。Claude 代理运行在独立的 Linux 容器中，拥有真正的文件系统隔离。
 
-NanoClaw 用一个您能在 8 分钟内理解的代码库，为您提供了同样的核心功能。只有一个进程，少数几个文件。智能体（Agent）运行在具有文件系统隔离的真实 Linux 容器中，而不是依赖于权限检查。
+LeoBot 用一个您能在 8 分钟内理解的代码库，为您提供了同样的核心功能。只有一个进程，少数几个文件。智能体（Agent）运行在具有文件系统隔离的真实 Linux 容器中，而不是依赖于权限检查。
 
 ## 快速开始
 
 ```bash
-git clone https://github.com/qwibitai/nanoclaw.git
-cd nanoclaw
+git clone https://github.com/leonardoFu/leobot.git
+cd leobot
 claude
 ```
 
@@ -92,7 +92,7 @@ claude
 
 **不要添加功能，而是添加技能。**
 
-如果您想添加 Telegram 支持，不要创建一个 PR 同时添加 Telegram 和 WhatsApp。而是贡献一个技能文件 (`.claude/skills/add-telegram/SKILL.md`)，教 Claude Code 如何改造一个 NanoClaw 安装以使用 Telegram。
+如果您想添加 Telegram 支持，不要创建一个 PR 同时添加 Telegram 和 WhatsApp。而是贡献一个技能文件 (`.claude/skills/add-telegram/SKILL.md`)，教 Claude Code 如何改造一个 LeoBot 安装以使用 Telegram。
 
 然后用户在自己的 fork 上运行 `/add-telegram`，就能得到只做他们需要事情的整洁代码，而不是一个试图支持所有用例的臃肿系统。
 
@@ -161,7 +161,7 @@ Docker 提供跨平台支持（macOS 和 Linux）和成熟的生态系统。在 
 
 **我可以使用第三方或开源模型吗？**
 
-可以。NanoClaw 支持任何 API 兼容的模型端点。在 `.env` 文件中设置以下环境变量：
+可以。LeoBot 支持任何 API 兼容的模型端点。在 `.env` 文件中设置以下环境变量：
 
 ```bash
 ANTHROPIC_BASE_URL=https://your-api-endpoint.com

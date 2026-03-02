@@ -2,20 +2,20 @@ import { execFileSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 
-import { BASE_DIR, CUSTOM_DIR, NANOCLAW_DIR } from './constants.js';
-import { initNanoclawDir } from './init.js';
+import { BASE_DIR, CUSTOM_DIR, LEOBOT_DIR } from './constants.js';
+import { initLeobotDir } from './init.js';
 import { recordCustomModification } from './state.js';
 
 export function initSkillsSystem(): void {
-  initNanoclawDir();
-  console.log('Skills system initialized. .nanoclaw/ directory created.');
+  initLeobotDir();
+  console.log('Skills system initialized. .leobot/ directory created.');
 }
 
 export function migrateExisting(): void {
   const projectRoot = process.cwd();
 
   // First, do a fresh init
-  initNanoclawDir();
+  initLeobotDir();
 
   // Then, diff current files against base to capture modifications
   const baseSrcDir = path.join(projectRoot, BASE_DIR, 'src');
@@ -47,7 +47,7 @@ export function migrateExisting(): void {
       // Extract modified file paths from the diff
       const filesModified = [...diff.matchAll(/^diff -ruN .+ (.+)$/gm)]
         .map((m) => path.relative(projectRoot, m[1]))
-        .filter((f) => !f.startsWith('.nanoclaw'));
+        .filter((f) => !f.startsWith('.leobot'));
 
       // Record in state so the patch is visible to the tracking system
       recordCustomModification(
@@ -57,7 +57,7 @@ export function migrateExisting(): void {
       );
 
       console.log(
-        'Custom modifications captured in .nanoclaw/custom/migration.patch',
+        'Custom modifications captured in .leobot/custom/migration.patch',
       );
     } else {
       console.log('No custom modifications detected.');
