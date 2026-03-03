@@ -81,9 +81,7 @@ describe('ensureContainerRuntimeRunning', () => {
 describe('cleanupOrphans', () => {
   it('stops orphaned leobot containers', () => {
     // docker ps returns container names, one per line
-    mockExecSync.mockReturnValueOnce(
-      'leobot-group1-111\nleobot-group2-222\n',
-    );
+    mockExecSync.mockReturnValueOnce('leobot-group1-111\nleobot-group2-222\n');
     // stop calls succeed
     mockExecSync.mockReturnValue('');
 
